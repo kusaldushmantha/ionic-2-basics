@@ -1,0 +1,4 @@
+In Terminal type:
+	1. ionic start <ProjectName>
+	2. navigate to <ProjectName> directory.
+	3. ionic serve

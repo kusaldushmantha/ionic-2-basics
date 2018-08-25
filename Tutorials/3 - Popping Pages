@@ -1,0 +1,10 @@
+1. Add a click listener to button that need to redirect back
+	(click)="onGoBack()
+
+2. Implement the go back method on current logic file.
+
+    onGoBack() {
+        this.navCtrl.pop();         => Pops the topmost page
+        this.navCtrl.popToRoot();   => Go to root Page
+	this.navCtrl.popTo(<PageToLoad>)  => Go to desired Page
+    }

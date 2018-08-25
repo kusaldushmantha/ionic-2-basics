@@ -1,0 +1,28 @@
+1. Add a click event lister to button that calls the next page
+	(click)="onLoadUser('<arg to be passed>')"
+
+2. Pass data as an object to the page that is to be loaded. In this case, UserPage will
+recieve an object with {userName: name}; name= argument passed by click listener. 
+  onLoadUser(name: string){
+    this.navCtrl.push(UserPage, {userName: name});
+  }
+
+3. On UserPage use get property on navParams to retrieve data and assign it to a variable.
+	constructor(private navParams: NavParams){
+        	this.name = this.navParams.get('userName')
+        }
+
+   or equivalently use ngInit hook to do the above.
+	export class UserPage implements OnInit{
+
+	    constructor(private navParams: NavParams){}
+
+	    name: string;
+
+	    ngOnInit(){
+		this.name = this.navParams.get('userName')
+	    }
+
+	}
+
+4. Make sure to register newly created pages on app.module.ts

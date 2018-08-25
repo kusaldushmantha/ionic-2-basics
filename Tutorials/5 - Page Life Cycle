@@ -1,0 +1,9 @@
+ionViewCanEnter - Navigation Guard > Should the page be loaded, Does viewer has access to view 			  this page? Should return True or False
+ionViewDidLoad  - Page has loaded; Not fired upon already loaded pages(Cached pages), This method 			  allows to write setup code for the page.
+onViewWillEnter - Page is about to become active, No matter if it is a cached page or new page.
+ionViewDidEnter - Page is now active, No matter if it is a cached page or new page.
+ionViewCanLeave - Navigation Guard > Can user leave this page? Should return a promise or boolean
+ionViewWillLeave - Page is about to become inactive.
+ionViewDidLeave - Page is no longer active.
+ionViewWillUnload - Page about to be destroyed, not cached anymore. CleanUp code goes here.
+
