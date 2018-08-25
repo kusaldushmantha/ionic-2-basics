@@ -5,7 +5,7 @@ import {LibraryPage} from "../library/library";
 @Component({
     selector: 'pages-tab',
     template: `
-        <ion-tabs>
+        <ion-tabs [selectedIndex]="1">
             <ion-tab [root]="favouritesPage" tabTitle="Favourites" tabIcon="star"></ion-tab>
             <ion-tab [root]="libraryPage" tabTitle="Library" tabIcon="book"></ion-tab>
         </ion-tabs>

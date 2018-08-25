@@ -1,0 +1,21 @@
+1. Tabs is also considered as a separate page.
+Initialize a dir inside pages dir named tabs and create a tabs.ts file. Register this in app.module.ts
+
+Let this page be tabs.ts and its component declaration as follows,
+
+@Component({
+    selector: 'pages-tab',
+    template: `
+        <ion-tabs [selectedIndex]="1">
+            <ion-tab [root]="favouritesPage" tabTitle="Favourites" tabIcon="star"></ion-tab>
+            <ion-tab [root]="libraryPage" tabTitle="Library" tabIcon="book"></ion-tab>
+        </ion-tabs>
+    `
+})
+
+export class TabsPage {
+    favouritesPage = FavouritesPage;
+    libraryPage = LibraryPage;
+}
+
+SelectorIndex = 1 tells ionic tabs to make the 1st tab default i.e. Library tab in above case. (tabs start from 0)
