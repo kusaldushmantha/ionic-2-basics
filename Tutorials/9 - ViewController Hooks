@@ -1,0 +1,10 @@
+1. willEnter - Observable, Fired when component about to get active
+2. didEnter - Observable, Fired when component has become active
+3. willLeave - Observable, Fired when component about to become inactive
+4. didLeave - Observable, Fired when component has become active
+5. willUnload - Observable, Fired when component has been destroyed
+
+Any of the above Observables will not pass the data on dismissal. If data passing is required, use below methods,
+
+6. onWillDismiss - Called when current ViewController will be dismissed
+7. onDidDismiss - Called when current ViewController was dismissed
