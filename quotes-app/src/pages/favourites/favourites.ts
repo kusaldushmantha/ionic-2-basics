@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Quote} from "../../data/quote.interface";
 import {QuotesService} from "../../services/quotes";
-import {ModalController} from "ionic-angular";
+import {MenuController, ModalController} from "ionic-angular";
 import {QuotePage} from "../quote/quote";
 
 @Component({

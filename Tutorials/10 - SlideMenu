@@ -47,3 +47,17 @@ export class MyApp {
   }
 
 @ViewChild('nav') says to grab the variable 'nav' declared in app.html
+
+On adding buttons on NavBar use <ion-buttons> inside <ion-navbar>
+
+<ion-navbar>
+    <ion-buttons float-start>
+      <button ion-button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Favourite Quotes</ion-title>
+  </ion-navbar>
+
+float-start adjusts title with button on same line and button aligns to left
+
