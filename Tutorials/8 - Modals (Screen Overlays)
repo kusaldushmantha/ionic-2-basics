@@ -1,0 +1,23 @@
+constructor(private modalCtrl: ModalController) {}
+  onViewQuote(quote: Quote){
+     const modal = this.modalCtrl.create(QuotePage);
+     modal.present();
+  }
+
+QuotePage is the page that will be loaded as the overlay.
+
+export class QuotePage {
+
+  constructor(private viewCtrl: ViewController){}
+
+  onClose(){
+    this.viewCtrl.dismiss();
+  }
+
+}
+
+On QuotePage, ViewController is used to manage modalPage. Since this is created not by page stack i.e. NavPush; this cannot popped by NavPop. Therefore viewCtrl.dismiss() is used;
+
+ViewController can be used to manage the behaviour of any page / modal
+
+* NavParams can be used to pass data to modal even if it is not built on PageStack.
