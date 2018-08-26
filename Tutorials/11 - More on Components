@@ -1,0 +1,53 @@
+* ion-content tag should have padding to get default padding,
+	<ion-content paddding></ion-content>
+
+* Buttons and Basic Styling
+	ion-button directive converts normal HTML button to ionic styled button.
+	Styles - outline / clear / round
+	Button Position - block : Changes button from inline element to Block element with rounded edges
+			  full : Block, full size button without rounded edges(remove padding from ion-content when using this)
+	Can add icons inside buttons using ion-icon attribute inside button
+	If Icon only use icon-only attribute in button
+	If Icon and text mixed then use icon-left or icon-right attribute
+
+* Lists and Styling
+	Created using <ion-item> or <button ion-item> inside <ion-list> OR can also use without <ion-list> if horizontal separator is not needed.
+	Placing elements:
+		1. item-left or item-right can be used to move items.
+			<ion-item>
+			   <ion-icon name="star" item-right></ion-icon>
+			</ion-tem>
+		2. <ion-item> can have <h1> and <p> tags and using them together will automatically visible like title and subtitle.
+
+	Styling:
+		1. no-lines attribute in <ion-list> removes separator lines.
+		2. use <ion-item-group> instead of <ion-list> to create groups.
+			<ion-item-group>
+				<ion-item-divider>A</ion-item-divider>
+				<ion-item>Apple</ion-item>
+				<ion-item-divider>B</ion-item-divider>
+				<ion-item>Banana</ion-item>
+			</ion-item-group>
+		3. <ion-list-header> inside <ion-list> can be used to provide a header.	
+
+* Grid System
+	Created using <ion-row> then <ion-col> inside <ion-grid>
+	To keep empty space from right use offset-<Value> in <ion-col>
+	To keep width, use with-<value> attribute in <ion-col>
+
+* Gestures
+	Click listener - Fires in both sort and long presses 
+	Tap listerner - Only fires in short presses
+	Press listener - Only Fires in long presses
+
+* Creating own components
+	1. Export a normal ts class with Component declarator.
+	2. Add the styling in template
+	3. Add selector : 'app-<component_name>'
+	4. Register in declarations in app.component.ts
+	5. Use component in desired place using app-<component_name> tag in HTML
+
+
+		
+
+
