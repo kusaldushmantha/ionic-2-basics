@@ -1,11 +1,11 @@
 import {Quote} from "../data/quote.interface";
-import quotes from "../data/quotes";
 
 export class QuotesService {
     private favouriteQuotes: Quote[] = [];
 
     addQuoteToFavourites(quote: Quote){
         this.favouriteQuotes.push(quote);
+        console.log(this.favouriteQuotes);
     }
 
     removeQuoteFromFavourites(quote: Quote){

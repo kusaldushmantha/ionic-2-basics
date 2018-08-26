@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Quote} from "../../data/quote.interface";
+import {QuotesService} from "../../services/quotes";
 
-@IonicPage()
 @Component({
   selector: 'page-favourites',
   templateUrl: 'favourites.html',
 })
 export class FavouritesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(private quoteService: QuotesService) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FavouritesPage');
+  quotes: Quote[];
+
+  ionViewWillEnter(){
+    this.quotes = this.quoteService.getFavouriteQuote();
   }
 
 }

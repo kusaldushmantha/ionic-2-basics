@@ -1,0 +1,2 @@
+1. Exports a class having functions
+2. Should register the service on Providers list in app.module.ts

@@ -1,3 +1,7 @@
 1. Creating a Page Using CLI  => ionic generate page <PageName>
 2. In the home page(Current page on top of the stack) push newly created page
 3. Register newly created page in entryComponents and declarations Modules of app.module.ts
+
+4. Any page that needs to be the root page should be assigned to rootPage in app.component.ts
+		  rootPage:any = TabsPage;  <- Assingns TabsPage as rootpage for the app
+
