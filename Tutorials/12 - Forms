@@ -1,0 +1,22 @@
+* 2 Approaches of Angular 2 for creating forms
+	Template-Driven Approach - Automatically creating the Javascipt representation of the form whenever it detects a 
+				   new HTML element in the form
+	Reactive Approach - We create the form on our own and we tell angular which form and which form element in HTML template has to 			    synchorize with the form object and controlls defined.
+
+* Simple form :
+
+<ion-content padding>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input type="text" name="ingredientName" placeholder="Milk"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Amount</ion-label>
+        <ion-input type="number" name="amount" placeholder="2"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" block>Add Item</button>
+  </form>
+</ion-content>
