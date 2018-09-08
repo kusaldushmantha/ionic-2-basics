@@ -20,3 +20,19 @@
     <button ion-button type="submit" block>Add Item</button>
   </form>
 </ion-content>
+
+
+Template Driven Approach:
+
+	1. <ion-input type="text" name="ingredientName" placeholder="Milk" ngModel></ion-input>
+	   Inserting ngModel ionic will know this has an action to handle through Javascript representation. This is known as registering 		   controlls
+
+	2. <form #f="ngForm" (ngSubmit) = "onAddItem(f)"> : #f creates a local reference and has access to HTML skeleton of the form. 
+           By adding "ngForm" then #f will have access to Javascript representation of the form created by Angular 2. 
+           (ngSubmit) listens to the submit of the form and pass the form to the onAddItem method when submit event is triggered.
+
+	  onAddItem(form: NgForm) {
+    		console.log(form);		<= onAddItem() should look like this in the relevant ts class.    
+	  }
+
+         
