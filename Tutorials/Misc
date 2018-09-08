@@ -1,0 +1,24 @@
+private ingredients : Ingredient[] = []; => Empty Array of objects of type ingredient
+
+---------------------------------------------------------------------------------------------
+export interface Quote {
+    id: string;
+    person: string;
+    text: string;
+}
+
+import {Quote} from "../data/quote.interface";
+
+export class QuotesService {
+    private favouriteQuotes: Quote[] = [];   => Initially empty array of objects of type Quote as defined by the interface
+}
+
+---------------------------------------------------------------------------------------------
+
+addItemsBulk(items: Ingredient[]) {
+  this.ingredients.push(...items)
+}
+
+three dots infornt of items says, push each item of items individually to ingredients array. (... is a ES6 Property)
+
+---------------------------------------------------------------------------------------------

@@ -14,7 +14,6 @@ export class ShoppingListPage {
 
   onAddItem(form: NgForm) {
     console.log(form);
-
   }
 
 }
