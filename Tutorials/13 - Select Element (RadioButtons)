@@ -1,0 +1,11 @@
+     selectOptions = ['Easy', 'Medium', 'Hard'];		<= on .ts file
+   
+      <ion-item>
+        <ion-label floating>Difficulty</ion-label>
+         <ion-select>
+           <ion-option *ngFor="let option of selectOptions" [value]="option">
+             {{ option }}</ion-option>
+         </ion-select>
+      </ion-item>
+
+

@@ -32,4 +32,9 @@ export class ShoppingListPage {
     this.itemList = this.shoppingListService.getItems();
   }
 
+  onCheckItem(index: number) {
+    this.shoppingListService.removeItem(index);
+    this.loadItems();
+  }
+
 }

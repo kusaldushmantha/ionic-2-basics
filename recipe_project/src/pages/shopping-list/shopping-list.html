@@ -25,7 +25,7 @@
   </form>
 
   <ion-list>
-    <ion-item *ngFor="let item of itemList">
+    <ion-item *ngFor="let item of itemList; let i = index" (click) = "onCheckItem(i)">
       <h3>{{ item.ingredientName }} - {{ item.amount }}</h3>
     </ion-item>
   </ion-list>
