@@ -35,4 +35,42 @@ Template Driven Approach:
     		console.log(form);		<= onAddItem() should look like this in the relevant ts class.    
 	  }
 
-         
+
+Reactive Approach :
+
+	1. Add the variable recipeForm and initializeForm method on .ts file and Call the method in constructor or ngOnInit
+
+	  recipeForm: FormGroup;
+
+	  private initializeForm() {
+	    this.recipeForm = new FormGroup({
+		'title': new FormControl(null, Validators.required),
+		'description': new FormControl(null, Validators.required),
+		'difficulty': new FormControl(this.selectOptions[1], Validators.required)
+	    });
+	  } 
+
+	title, description and difficulty will be labels of the form.
+
+	2. Add formGroup directive and ngSubmit event to form. add formControlName to input fields.
+	 
+	  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+	    <ion-list>
+	      <ion-item>
+		<ion-label floating>Title</ion-label>
+		<ion-input type="text" formControlName="title"></ion-input>
+	      </ion-item>
+	      <ion-item>
+		<ion-label floating>Description</ion-label>
+		<ion-textarea formControlName="description"></ion-textarea>
+	      </ion-item>
+	      <ion-item>
+		<ion-label floating>Difficulty</ion-label>
+		 <ion-select formControlName="difficulty">
+		   <ion-option *ngFor="let option of selectOptions" [value]="option">
+		     {{ option }}</ion-option>
+		 </ion-select>
+	      </ion-item>
+	    </ion-list>
+	    <button type="submit" ion-button block>{{ mode }} Recipe</button>
+	  </form>
