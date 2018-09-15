@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import {ActionSheetController, AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {
+    ActionSheetController,
+    AlertController,
+    IonicPage,
+    NavController,
+    NavParams,
+    ToastController
+} from 'ionic-angular';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @IonicPage()
@@ -16,7 +23,8 @@ export class EditPage {
   constructor(public navCtrl: NavController,
                public navParams: NavParams,
                public actionSheetCtrl: ActionSheetController,
-               public alertCtrl: AlertController) {
+               public alertCtrl: AlertController,
+               public toastCtrl: ToastController) {
 
     this.mode = this.navParams.get('mode');
     this.initializeForm();
@@ -53,10 +61,22 @@ export class EditPage {
                 text: 'Add',
                 handler: data => {
                     if(data.name.trim() == '' || data.name == null){
+                        const toast = this.toastCtrl.create({
+                            message: 'Please enter a valid value !',
+                            duration: 1500,
+                            position: 'top'
+                        });
+                        toast.present();
                         return;
                     }
                     (<FormArray>this.recipeForm.get('ingredients'))
                         .push(new FormControl(data.name, Validators.required))
+                    const toast = this.toastCtrl.create({
+                        message: 'Ingredient Added !',
+                        duration: 1500,
+                        position: 'top'
+                    });
+                    toast.present();
                 }
             }
         ]
@@ -83,6 +103,12 @@ export class EditPage {
                          for(let i = len - 1; i >= 0; i--) {
                              formArray.removeAt(i);
                          }
+                         const toast = this.toastCtrl.create({
+                             message: 'All Ingredients removed',
+                             duration: 1500,
+                             position: 'top'
+                         });
+                         toast.present();
                      }
                  }
              },
