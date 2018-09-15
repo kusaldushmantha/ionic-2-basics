@@ -1,0 +1,27 @@
+* In constructor create a actionSheetController varaible (actionSheetCtrl)
+
+onManageIngredients() {
+      const actionSheet = this.actionSheetCtrl.create({
+         title: 'What do you want to do?',
+         buttons: [
+             {
+                 text: 'Add Ingredients',
+                 handler: () => {
+                    this.createNewIngredientAlert().present();       <=   handler is what happens when the button is pressed
+                 }
+             },
+             {
+                 text: 'Remove all Ingredients',
+                 role: 'destructive',	     <= roles create effects on button, this role makes this button red. look for all roles in docs
+                 handler: () => {}
+             },
+             {
+                 text: 'Cancel',
+                 role: 'Cancel'
+             }
+         ]
+      });
+      actionSheet.present();
+  }
+
+
